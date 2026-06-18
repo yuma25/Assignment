@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - 最終課題 8.GUI　Task8_GUI
+ - @author 241205159 増田侑真
+ -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>     <!-- 複数の中から1つだけを選択できるボタン-->
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>     <!-- RadioButtonをグループ化し, そのグループ内で1つだけ選択できるよう-->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.ac.meijo_u.id241205159.Task8_GUIController">
+   <children>
+      <MenuBar>   <!-- メニューバーを配置し、アプリケーションの上部にメニューを表示 -->
+         <menus>
+            <Menu mnemonicParsing="false" text="ファイル">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpenFile" text="開く" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="背景色:" />
+            <RadioButton fx:id="whiteBackgroundRadioButton" mnemonicParsing="false" selected="true" text="白">
+               <toggleGroup>
+               <!-- ラジオボタンをグループ化し, どちらか一方しか選択できないように -->
+                  <ToggleGroup fx:id="backgroundToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="blackBackgroundRadioButton" mnemonicParsing="false" text="黒" toggleGroup="$backgroundToggleGroup" />
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <ScrollPane VBox.vgrow="ALWAYS">
+         <content>
+            <VBox>
+               <children>
+                  <Canvas fx:id="asciiCanvas" />   <!-- 描画領域として使用するキャンバス -->
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

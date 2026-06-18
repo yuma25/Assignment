@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - 最終課題 8.A　Task8_Advanced 
+ - @author 241205159 増田侑真
+ -->
+<?import java.net.URL?>                 <!-- スタイルシートなどの外部リソースをURLとして指定するために使用 -->
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>     <!-- 画像データを表現するためのクラス -->
+<?import javafx.scene.image.ImageView?> <!-- Imageオブジェクトを画面に表示するためのコンポーネント -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="516.0" prefWidth="625.0" spacing="20.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.ac.meijo_u.id241205159.Task8_AdvancedController">
+    <stylesheets>
+        <URL value="@application.css" />
+    </stylesheets>
+    <children>
+        <Label fx:id="messageLabel" alignment="BOTTOM_CENTER" prefHeight="105.0" prefWidth="430.0" text="【 じゃんけんゲーム　3勝先取 】" textAlignment="CENTER" textFill="RED">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <StackPane prefHeight="268.0" prefWidth="623.0">    <!-- プレーヤーとコンピュータの手の画像, および勝敗の画像を重ねて表示するため-->
+            <children>
+                <HBox alignment="CENTER" prefHeight="256.0" prefWidth="625.0" spacing="50.0">
+                    <children>
+                        <ImageView fx:id="playerHandImage" fitHeight="244.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/rock.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="computerHandImage" fitHeight="240.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/rock.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <ImageView fx:id="winLoseImage" fitHeight="263.0" fitWidth="424.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" visible="false" />    <!-- 勝敗結果の画像を表示するImageView. 初期状態では非表示 -->
+            </children>
+        </StackPane>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+            <children>
+                <Label fx:id="playerResultLabel" alignment="CENTER" prefHeight="30.0" prefWidth="138.0" text="あなた: 0 勝">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="computerResultLabel" alignment="CENTER" prefHeight="30.0" prefWidth="146.0" text="コンピュータ: 0 勝" textAlignment="CENTER">
+                    <font>
+                        <Font size="34.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox fx:id="buttonBox" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+            <children>
+                <Button fx:id="rockButton" mnemonicParsing="false" onAction="#handleRockAction" prefHeight="37.0" prefWidth="67.0" text="グー" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Italic" size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="scissorsButton" mnemonicParsing="false" onAction="#handleScissorsAction" prefHeight="37.0" prefWidth="67.0" text="チョキ">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Button>
+                <Button fx:id="paperButton" mnemonicParsing="false" onAction="#handlePaperAction" prefHeight="37.0" prefWidth="67.0" text="パー">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>     <!-- ゲーム終了後に表示されるボタンを水平に並べるHBox -->
+        <HBox alignment="CENTER" prefHeight="66.0" prefWidth="636.0" spacing="10.0">
+            <children>
+                <Button fx:id="playAgainButton" onAction="#handlePlayAgainAction" text="もう一度プレイする" visible="false" />      <!-- もう一度プレイするボタン. 初期状態では非表示 -->
+                <Button fx:id="exitButton" onAction="#handleExitAction" text="終了する" visible="false" />                         <!-- 終了するボタン. 初期状態では非表示 -->
+            </children>
+        </HBox>
+    </children>
+</VBox>

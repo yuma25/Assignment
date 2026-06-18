@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ username }} さんの日記</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="diary">
+    <div class="diary">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='color_100th.jpg') }}" alt="meijo">
+        </div>
+        <h2>{{ username }} さんの日記</h2>
+
+        <p><a href="{{ url_for('logout') }}">ログアウト</a></p>
+
+        <section class="form">
+            <form method="POST" action="/diary">
+                <label for="diary_entry">日記の内容:</label>
+                <textarea name="entry" id="entry" cols="50" rows="10" required></textarea>
+                <br>
+                <button type="submit">投稿</button>
+            </form>
+            {% if error_message %}
+                <p style="color:#a60040 ;">{{ error_message }}</p>
+            {% endif %}
+        </section>
+
+        <!-- 過去の日記 -->
+        <section class="history">
+            <h3>過去の日記</h3>
+            {% if diary_entries %}
+                {% for entry in diary_entries %}
+                    <div class="entry">
+                        <p><strong>{{ entry['date'] }}</strong></p>
+                        <p>{{ entry['entry'] | safe }}</p>
+
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>まだ投稿された日記がありません。</p>
+            {% endif %}
+        </section>
+    </div>
+</body>
+</html>

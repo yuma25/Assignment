@@ -1,0 +1,71 @@
+body.login,body.register {
+    background-image: url("meijo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.diary{
+    background-color: #a60040;
+}
+
+.register,.login {
+    width: 450px;
+    padding: 40px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.diary{
+    width: 600px;
+    padding: 40px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #e1d8d8;
+    color: hsl(0, 0%, 100%);
+    background-color: #a60040;
+    height: 45px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #e1d8d8;
+}
+
+button {
+    background-color:#1b3f9c;
+    color: rgb(255, 255, 255);
+}
+
+button:hover {
+    background-color: #183a8e;
+}
+
+textarea{
+    resize: none;
+}
+
+.entry {
+    background-color: #d3caca;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}

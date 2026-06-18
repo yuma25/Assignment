@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー登録</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="register">
+    <div class="register">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='color_100th.jpg') }}" alt="meijo">
+        </div>
+        <h2>ユーザー登録</h2>
+        <form method="POST" action="/register">
+            <label for="username"></label>
+            <input type="text" name="username" id="username" placeholder="ユーザー名">
+            <br>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="パスワード">
+            <br>
+            {% if error_message %}
+            <p style="color: #a60040;">{{ error_message }}</p>
+            {% endif %}
+            <button type="submit">登録</button>
+        </form>
+        <p>すでにアカウントをお持ちですか？ <a href="{{ url_for('login') }}">ログイン</a></p>
+    </div>
+</body>
+</html>

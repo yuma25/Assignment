@@ -1,0 +1,41 @@
+.root-pane {
+    -fx-background-image: url("images/background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.button {
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+    -fx-background-color: lightgray;
+    -fx-font-weight: bold;
+
+}
+
+.button:hover {
+    -fx-background-color: #a0a0a0; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#messageLabel {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold; 
+    -fx-text-fill: #ea6565; 
+    -fx-effect: dropshadow(gaussian, rgba(219, 199, 199, 0.75), 10, 0, 0, 0); 
+}
+
+#playerResultLabel, #computerResultLabel {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(255, 255, 255);
+    
+}
+
+#playerResultLabel {
+    -fx-text-fill: #28a745;
+}
+
+#computerResultLabel {
+    -fx-text-fill: #dc3545;
+}
