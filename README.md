@@ -57,8 +57,18 @@ Flaskフレームワークを用いた，シンプルかつセキュアな日記
 Java 開発環境および JavaFX を利用した，複数のデスクトップアプリケーションの実装である．
 
 #### 動作デモ動画
-アプリケーションの実際の動作については，以下のリンクより確認可能である．
-- [プログラミング演習III デモ動画 (YouTube)](https://youtu.be/JZ-AK-jQJVc?si=D6NKa60YIjc-ccB1)
+
+<h3 align="center">🎬 デモ動画 (Demo Video)</h3>
+
+<p align="center">
+  <a href="https://youtu.be/gXPIKF_XWUw" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.youtube.com/vi/gXPIKF_XWUw/maxresdefault.jpg" alt="プログラミング演習III デモ動画" width="640" style="border-radius: 16px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+  </a>
+</p>
+
+<p align="center">
+  <sub>※画像をクリックすると YouTube でデモ動画が再生されます</sub>
+</p>
 
 #### Task8_Advanced：JavaFX じゃんけんゲーム
 JavaFX の FXML を利用して UI を定義したインタラクティブなゲームである．
